@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Risk Assessment System</title>
+    <!-- Lien vers votre fichier CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="login">
+        <h1>CREDIT RISK ASSESSMENT SYSTEM</h1>
+
+        <form action="/predict" method="POST">
+            
+            <!-- Critère 1 : Credit History -->
+            <div class="form-group">
+                <label for="Credit_History">CREDIT HISTORY</label>
+                <span class="desc">Compliance of past repayments (BDF)</span>
+                <select name="Credit_History" id="Credit_History" required>
+                    <option value="1">Yes (Satisfactory)</option>
+                    <option value="0">No (Default / Incident)</option>
+                </select>
+            </div>
+
+            <!-- Critère 2 : Marital Status -->
+            <div class="form-group">
+                <label for="Married">MARITAL STATUS</label>
+                <span class="desc">Current legal status</span>
+                <select name="Married" id="Married" required>
+                    <option value="1">Married</option>
+                    <option value="0">Single / Other</option>
+                </select>
+            </div>
+
+            <!-- Critère 3 : Co-applicant Income -->
+            <div class="form-group">
+                <label for="CoapplicantIncome">CO-APPLICANT MONTHLY INCOME</label>
+                <span class="desc">Net income excluding bonuses ($ / €)</span>
+                <input type="number" name="CoapplicantIncome" id="CoapplicantIncome" placeholder="e.g. 2500" required>
+            </div>
+
+            <!-- Bouton de validation -->
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">EVALUATE RISK</button>
+        </form>
+
+        <!-- Affichage du résultat si présent -->
+        {% if prediction_text %}
+            <div class="result-box {{ result_class }}">
+                <h3>{{ prediction_text }}</h3>
+            </div>
+        {% endif %}
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

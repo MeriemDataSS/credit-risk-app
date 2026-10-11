@@ -1,0 +1,216 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btn-large { padding: 11px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0); border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
+.btn-block { width: 100%; display:block; }
+
+*, *:before, *:after { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%; }
+
+body { 
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    
+    /* Superposition d'un voile sombre et de votre vraie image de monnaie */
+    background: linear-gradient(rgba(9, 39, 86, 0.3), rgba(86, 9, 9, 0.4)), 
+                url('im.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+
+/* Carte principale : dégradé bleu nuit, coins arrondis */
+.login {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    padding: 44px 40px 40px;
+    font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(180deg, rgba(36, 51, 107, 0.6) 0%, rgba(19, 28, 66, 0.75) 100%);
+    border-radius: 18px;
+    box-shadow: 0 25px 50px -12px rgba(30, 45, 95, 0.55);
+    border: none;
+}
+ 
+/* Montagnes en silhouette (SVG intégré, fondu vers le bas) */
+.login::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 210px;
+
+    background: url("credit3.jpg") no-repeat center / cover;  
+    -webkit-mask-image: linear-gradient(#000 55%, transparent);
+    mask-image: linear-gradient(#000 55%, transparent);
+    pointer-events: none;
+}
+ 
+
+ 
+/* Le contenu reste au-dessus du décor */
+.login > * {
+    position: relative;
+    z-index: 1;
+}
+ 
+/* Titre fin, très espacé */
+.login h1 {
+    color: #ffffff;
+    font-family:'Montserrat';
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 110px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+ 
+/* Groupes de champs */
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+ 
+.form-group label {
+    display: block;
+    font-weight: 300;
+    font-size: 12px;
+    color: #ffffff;
+    margin-bottom: 2px;
+    margin-left: 20px;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+ 
+.form-group .desc {
+    display: block;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    margin-left: 20px;
+}
+ 
+/* Champs en pilule translucide */
+input, select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    border: none;
+    outline: none;
+    padding: 13px 22px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 300;
+    color:  #ffffff;
+    border-radius: 999px;
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: none;
+}
+ 
+input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+    
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 300;
+   
+}
+
+
+
+
+select {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 300;
+    border: 1px solid #6b7280; 
+   
+}
+
+/* Choix dans la liste ouverte : lisibles, sans italique */
+select option {
+    background: #1a2554;
+    color: #ffffff;
+    font-style: normal;
+    font-size: 14px;
+}
+
+
+ 
+input:focus, select:focus {
+    background: rgba(1, 8, 27, 0.65);
+    box-shadow: 0 0 0 2px rgba(155, 189, 90, 0.7);
+}
+ 
+/* Bouton vert en pilule */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background:  linear-gradient(180deg, #b3b5ad 0%, #c5c7c1 100%);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.1s ease;
+    margin-top: 14px;
+    letter-spacing: 1.5px;
+}
+ 
+.btn:hover {
+    filter: brightness(1.08);
+}
+ 
+.btn:active {
+    transform: scale(0.99);
+}
+ 
+/* Boîte de résultat assortie */
+.result-box {
+    margin-top: 25px;
+    padding: 14px 18px;
+    background: rgba(163, 196, 96, 0.18);
+    border: 1px solid rgba(163, 196, 96, 0.45);
+    border-radius: 22px;
+    text-align: center;
+}
+ 
+.result-box h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #d6efa3;
+    font-weight: 400;
+}
+.result-box.success { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.5); }
+.result-box.success h3 { color: #4ade80; }
+
+.result-box.danger { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.5); }
+.result-box.danger h3 { color: #f87171; }
