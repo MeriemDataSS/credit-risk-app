@@ -3,4 +3,4 @@ scikit-learn==1.9.1
 seaborn
 pandas
 numpy
-pickle
+
